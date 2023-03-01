@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const chalk = require('chalk')
-const { logger } = require('@eljs/release')
+const { step } = require('@eljs/release')
+const { logger } = require('og-toolkit')
 
 const { resolveRoot, bin, run } = require('./utils')
 
@@ -11,10 +12,6 @@ const prodOnly = !devOnly && (args.prodOnly || args.p)
 const sourceMap = args.sourcemap || args.s
 const isRelease = args.release
 const buildTypes = args.t || args.types || isRelease
-
-const step = msg => {
-  logger.step(msg, 'Build')
-}
 
 main()
 
