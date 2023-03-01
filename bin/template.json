@@ -1,0 +1,14 @@
+{
+	"auditStatus-审批状态": [
+		{ 
+			"label": "待审批", 
+			"key": "Waiting", 
+			"value": 1
+		},
+		{ 
+			"label": "审批成功", 
+			"key": "Success", 
+			"value": 2
+		}
+	]
+}
