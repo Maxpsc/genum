@@ -43,22 +43,6 @@ async function main() {
 
     function doBuildTypes() {
       if (buildTypes && pkg.types) {
-        const { Extractor, ExtractorConfig } = require('@microsoft/api-extractor')
-
-        const extractorConfigPath = path.resolve(pkgDir, `api-extractor.json`)
-        const extractorConfig = ExtractorConfig.loadFileAndPrepare(extractorConfigPath)
-        const extractorResult = Extractor.invoke(extractorConfig, {
-          localBuild: true,
-          showVerboseMessages: true,
-        })
-
-        if (!extractorResult.succeeded) {
-          logger.printErrorAndExit(
-            `API Extractor completed with ${extractorResult.errorCount} errors` +
-              ` and ${extractorResult.warningCount} warnings.`
-          )
-        }
-
         removeSync(`${pkgDir}/dist/packages`)
       }
     }

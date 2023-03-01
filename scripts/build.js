@@ -54,22 +54,6 @@ async function main() {
     step(`Rolling up type definitions for ${chalk.cyanBright.bold(pkg.name)}`)
     console.log()
 
-    const { Extractor, ExtractorConfig } = require('@microsoft/api-extractor')
-
-    const extractorConfigPath = resolveRoot(`api-extractor.json`)
-    const extractorConfig = ExtractorConfig.loadFileAndPrepare(extractorConfigPath)
-    const extractorResult = Extractor.invoke(extractorConfig, {
-      localBuild: true,
-      showVerboseMessages: true,
-    })
-
-    if (!extractorResult.succeeded) {
-      logger.printErrorAndExit(
-        `API Extractor completed with ${extractorResult.errorCount} errors` +
-          ` and ${extractorResult.warningCount} warnings.`
-      )
-    }
-
     await fs.remove(resolveRoot('dist/src'))
   }
 
