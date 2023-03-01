@@ -1,6 +1,5 @@
 const fs = require('fs-extra')
 const chalk = require('chalk')
-const { step } = require('@eljs/release')
 const { logger } = require('og-toolkit')
 
 const { resolveRoot, bin, run } = require('./utils')
@@ -31,7 +30,7 @@ async function main() {
 
   const env = devOnly ? 'development' : 'production'
 
-  step(`Rolling up bundles for ${chalk.cyanBright.bold(pkg.name)}`)
+  logger.step(`Rolling up bundles for ${chalk.cyanBright.bold(pkg.name)}`)
   await run(bin('rollup'), [
     '-c',
     '--environment',
@@ -48,7 +47,7 @@ async function main() {
 
   // build types
   if (buildTypes && pkg.types) {
-    step(`Rolling up type definitions for ${chalk.cyanBright.bold(pkg.name)}`)
+    logger.step(`Rolling up type definitions for ${chalk.cyanBright.bold(pkg.name)}`)
     console.log()
 
     await fs.remove(resolveRoot('dist/src'))

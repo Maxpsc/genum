@@ -1,4 +1,5 @@
-const { logger, release } = require('@eljs/release')
+const { release } = require('@eljs/release')
+const { logger } = require('og-toolkit')
 
 const { bin, run } = require('./utils')
 

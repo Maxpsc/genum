@@ -1,6 +1,6 @@
 {
-  "name": "genum",
-  "version": "0.0.0",
+  "name": "og-genum",
+  "version": "0.0.1",
   "description": "a simple tool to generate ts enum",
   "keywords": [
     "typescript",
@@ -26,7 +26,7 @@
     "test:once": "jest --runInBand --colors --forceExit",
     "coverage": "codecov",
     "prepare": "husky install",
-    "release": "release"
+    "release": "pnpm build && release"
   },
   "dependencies": {
     "chalk": "^4.1.1",
@@ -83,7 +83,7 @@
   },
   "author": "maxpsc",
   "publishConfig": {
-    "registry": "https://npm.corp.kuaishou.com/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "license": "MIT"

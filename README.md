@@ -1,4 +1,4 @@
-# genum
+# og-genum
 
 > a simple tool to generate ts enum
 
@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-$ npm i genum -g
+$ npm i og-genum -g
 ```
 
 ## Usage

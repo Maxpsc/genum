@@ -1,7 +1,7 @@
 const cp = require('child_process')
 const path = require('path')
 const chalk = require('chalk')
-const { step } = require('@eljs/release')
+const { logger } = require('og-toolkit')
 
 const { resolveRoot, bin, run } = require('./utils')
 
@@ -18,7 +18,7 @@ async function main() {
     return
   }
 
-  step(`Watching ${chalk.cyanBright.bold(pkg.name)}`, 'Dev')
+  logger.step(`Watching ${chalk.cyanBright.bold(pkg.name)}`, 'Dev')
   if (buildTypes) {
     const watch = cp.spawn(bin('rollup'), [
       '-c',
