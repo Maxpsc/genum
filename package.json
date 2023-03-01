@@ -1,8 +1,12 @@
 {
   "name": "genum",
   "version": "0.0.0",
-  "description": "generate enum",
-  "keywords": [],
+  "description": "a simple tool to generate ts enum",
+  "keywords": [
+    "typescript",
+    "enum",
+    "command"
+  ],
   "main": "dist/genum.cjs.js",
   "module": "dist/genum.esm.js",
   "bin": {
